@@ -1,0 +1,2490 @@
+/* Noto Color Emoji imported via Google Fonts optimized link in HTML */
+
+:root {
+    --primary-rose: #f43f5e;
+    --rose-glow: rgba(244, 63, 94, 0.45);
+    --glass-bg: rgba(255, 255, 255, 0.58);
+    --glass-border: rgba(255, 255, 255, 0.82);
+    --liquid-glow: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', 'Segoe UI Symbol', sans-serif;
+    background: #fff5f7;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #1e293b;
+    position: relative;
+    text-rendering: optimizeLegibility;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, input, select, textarea, a,
+.kb-key, .welcome-unlock-btn, .wax-seal, .liquid-glass-pill, .cake-card-interactive,
+.ttt-cell, .ws-cell, .memory-card, .arcade-tab-btn, .floating-balloon, #secretSkipZone {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* LIQUID DYNAMIC BACKGROUND CANVAS & MESH BLOBS */
+.liquid-orb-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    filter: blur(50px);
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.liquid-blob {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    animation: floatLiquid 20s ease-in-out infinite alternate;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.blob-1 {
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(254, 205, 211, 0.9) 0%, rgba(251, 113, 133, 0.45) 70%, transparent 100%);
+    top: -100px;
+    left: -80px;
+    animation-duration: 22s;
+}
+
+.blob-2 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(254, 240, 138, 0.85) 0%, rgba(251, 146, 60, 0.45) 70%, transparent 100%);
+    top: 25%;
+    right: -120px;
+    animation-duration: 26s;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(253, 164, 175, 0.8) 0%, rgba(244, 114, 182, 0.4) 65%, transparent 100%);
+    bottom: 10%;
+    left: 10%;
+    animation-duration: 20s;
+    animation-delay: -8s;
+}
+
+.blob-4 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(233, 213, 255, 0.75) 0%, rgba(192, 132, 252, 0.35) 70%, transparent 100%);
+    bottom: -80px;
+    right: 15%;
+    animation-duration: 24s;
+    animation-delay: -12s;
+}
+
+@keyframes floatLiquid {
+    0% {
+        transform: translate3d(0px, 0px, 0) scale(1) rotate(0deg);
+    }
+
+    33% {
+        transform: translate3d(35px, -25px, 0) scale(1.06) rotate(60deg);
+    }
+
+    66% {
+        transform: translate3d(-25px, 30px, 0) scale(0.96) rotate(120deg);
+    }
+
+    100% {
+        transform: translate3d(20px, -15px, 0) scale(1.03) rotate(180deg);
+    }
+}
+
+/* LIQUID GLASS MODERN DESIGN SYSTEM */
+.liquid-glass {
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    box-shadow:
+        0 20px 45px -12px rgba(244, 63, 94, 0.16),
+        0 8px 20px -6px rgba(0, 0, 0, 0.05),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 2px 0 rgba(244, 63, 94, 0.08);
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.liquid-glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 25px 60px -15px rgba(225, 29, 72, 0.18),
+        0 10px 25px -8px rgba(0, 0, 0, 0.04),
+        inset 0 2px 2px rgba(255, 255, 255, 1),
+        inset 0 -2px 4px rgba(244, 63, 94, 0.06);
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: left 0.85s ease;
+}
+
+.liquid-glass-card:hover::before {
+    left: 200%;
+}
+
+.liquid-glass-pill {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 8px 24px -6px rgba(244, 63, 94, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 1);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.liquid-glass-pill:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow:
+        0 12px 28px -4px rgba(244, 63, 94, 0.28),
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+    border-color: rgba(251, 113, 133, 0.5);
+}
+
+.liquid-button-primary {
+    background: linear-gradient(135deg, #f43f5e 0%, #fb7185 50%, #f43f5e 100%);
+    box-shadow:
+        0 12px 30px -6px rgba(244, 63, 94, 0.55),
+        inset 0 2px 2px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 4px rgba(190, 18, 60, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.liquid-button-primary:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow:
+        0 18px 38px -6px rgba(244, 63, 94, 0.68),
+        inset 0 2px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* FONTS & TYPOGRAPHY */
+.font-serif-title {
+    font-family: 'Playfair Display', Georgia, 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', serif;
+}
+
+.font-garamond {
+    font-family: 'Playfair Display', Georgia, 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', serif;
+}
+
+.font-handwriting {
+    font-family: 'Great Vibes', 'Dancing Script', cursive, 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+    display: inline-block;
+    padding-right: 0.35em;
+    padding-left: 0.05em;
+    overflow: visible;
+}
+
+h1 span.font-handwriting,
+.font-handwriting.bg-clip-text,
+span[class*="bg-clip-text"].font-handwriting {
+    display: inline-block !important;
+    padding-right: 0.4em !important;
+    padding-left: 0.05em !important;
+    overflow: visible !important;
+}
+
+.font-casual-hand {
+    font-family: 'Great Vibes', 'Caveat', cursive, 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+    display: inline-block;
+    padding-right: 0.25em;
+    overflow: visible;
+}
+
+/* UNIVERSAL EMOJI RENDERING ENGINE & TWEMOJI SVG STYLING */
+.emoji-icon,
+.emoji,
+.sparkle-anim,
+.celestial-anim,
+.candle-flame-flicker {
+    font-family: 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', 'Segoe UI Symbol', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+    vertical-align: -0.1em;
+    text-shadow: none !important;
+}
+
+img.emoji {
+    height: 1.25em !important;
+    width: 1.25em !important;
+    margin: 0 0.12em !important;
+    vertical-align: -0.22em !important;
+    display: inline-block !important;
+    pointer-events: none;
+}
+
+/* 3D LIQUID GLASS ENVELOPE */
+.envelope-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: 290px;
+    cursor: pointer;
+    perspective: 1400px;
+    margin: 0 auto;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+@media (max-width: 480px) {
+    .envelope-wrapper {
+        max-width: 325px;
+        height: 215px;
+    }
+}
+
+@media (max-width: 350px) {
+    .envelope-wrapper {
+        max-width: 285px;
+        height: 195px;
+    }
+}
+
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 241, 242, 0.75) 50%, rgba(254, 226, 226, 0.7) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 24px;
+    box-shadow:
+        0 30px 60px -12px rgba(190, 18, 60, 0.32),
+        0 12px 28px -6px rgba(0, 0, 0, 0.08),
+        inset 0 2px 2px rgba(255, 255, 255, 0.95);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s ease;
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    transform-style: preserve-3d;
+}
+
+.envelope-wrapper:hover .envelope {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 38px 75px -14px rgba(190, 18, 60, 0.42),
+        0 18px 36px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* Flap with Clip-Path & Liquid Gold Trim */
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 62%;
+    background: linear-gradient(135deg, rgba(254, 215, 170, 0.88) 0%, rgba(253, 164, 175, 0.85) 50%, rgba(251, 113, 133, 0.75) 100%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+    z-index: 5;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    backface-visibility: visible;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+/* Translucent Pockets */
+.envelope-pocket-left {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(254, 226, 226, 0.65) 0%, rgba(254, 205, 211, 0.45) 100%);
+    clip-path: polygon(0 0, 52% 52%, 0 100%);
+    z-index: 3;
+    pointer-events: none;
+    border-bottom-left-radius: 24px;
+}
+
+.envelope-pocket-right {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(225deg, rgba(254, 226, 226, 0.65) 0%, rgba(254, 205, 211, 0.45) 100%);
+    clip-path: polygon(100% 0, 48% 52%, 100% 100%);
+    z-index: 3;
+    pointer-events: none;
+    border-bottom-right-radius: 24px;
+}
+
+.envelope-pocket-bottom {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(251, 113, 133, 0.8) 0%, rgba(253, 164, 175, 0.6) 45%, rgba(254, 205, 211, 0.4) 100%);
+    clip-path: polygon(0 100%, 50% 46%, 100% 100%);
+    z-index: 4;
+    pointer-events: none;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 -4px 14px rgba(244, 63, 94, 0.1);
+}
+
+/* Letter Card Inside */
+.envelope-letter-card {
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: 14px;
+    height: 84%;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+    transition: transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, z-index 0.3s;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 5px solid #f43f5e;
+    border-bottom: 1.5px solid #fecdd3;
+    cursor: pointer;
+}
+
+.envelope.open .envelope-letter-card {
+    transform: translateY(-115px);
+    z-index: 8;
+    box-shadow: 0 24px 50px rgba(225, 29, 72, 0.3);
+}
+
+@media (max-width: 480px) {
+    .envelope.open .envelope-letter-card {
+        transform: translateY(-88px);
+    }
+}
+
+/* Liquid Wax Seal */
+.wax-seal {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 74px;
+    height: 74px;
+    background: radial-gradient(circle at 35% 35%, #fb7185, #e11d48, #9f1239);
+    border-radius: 50%;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3.5px solid #fef08a;
+    box-shadow:
+        0 12px 28px rgba(159, 18, 57, 0.55),
+        inset 0 2px 5px rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+}
+
+@media (max-width: 480px) {
+    .wax-seal {
+        width: 60px;
+        height: 60px;
+        top: 53%;
+    }
+}
+
+.wax-seal:hover {
+    transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
+}
+
+/* Wax Seal Open State: Pops, dissolves and fades out smoothly */
+.envelope.open .wax-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(35deg);
+    pointer-events: none;
+}
+
+/* LUXURY LIQUID PARCHMENT LETTER */
+.parchment-letter {
+    background: rgba(255, 253, 250, 0.88);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    background-image:
+        radial-gradient(circle at 95% 8%, rgba(254, 205, 211, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 8% 92%, rgba(254, 240, 138, 0.3) 0%, transparent 45%),
+        linear-gradient(rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 34px;
+    line-height: 34px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 35px 90px -20px rgba(190, 18, 60, 0.28),
+        0 15px 35px rgba(0, 0, 0, 0.05),
+        inset 0 2px 2px rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.drop-cap:first-letter {
+    float: left;
+    font-size: 3.5rem;
+    line-height: 0.82;
+    padding-top: 6px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    font-family: 'Playfair Display', serif;
+    color: #e11d48;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(244, 63, 94, 0.25);
+}
+
+/* SWEET SISTER INTERACTIVE CARDS */
+.sweet-sister-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 12px 28px -6px rgba(244, 63, 94, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.sweet-sister-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(244, 63, 94, 0.4);
+    box-shadow:
+        0 20px 40px -8px rgba(244, 63, 94, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+/* Midnight Starlight Deep Confession Card */
+.midnight-starlight-card {
+    background: radial-gradient(circle at 80% 20%, #1e1b4b 0%, #0f172a 65%, #080b14 100%);
+    border: 1.5px solid rgba(251, 113, 133, 0.45);
+    box-shadow:
+        0 25px 60px -10px rgba(15, 23, 42, 0.6),
+        inset 0 0 40px rgba(244, 63, 94, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.midnight-starlight-card::before {
+    content: "✨";
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 24px;
+    opacity: 0.75;
+    animation: pulseGlowGold 3s infinite;
+}
+
+/* BROTHER'S SACRED VOWS & EMOTIONAL KEEPSAKES */
+.vow-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 245, 0.92) 100%);
+    border: 1.5px solid rgba(251, 191, 36, 0.5);
+    box-shadow: 0 12px 28px -6px rgba(217, 119, 6, 0.12), inset 0 1px 1px rgba(255, 255, 255, 1);
+    border-radius: 22px;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.vow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.25), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: left 0.85s ease;
+}
+
+.vow-card:hover::before {
+    left: 200%;
+}
+
+.vow-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(245, 158, 11, 0.85);
+    box-shadow: 0 20px 42px -8px rgba(245, 158, 11, 0.28), 0 0 24px rgba(251, 191, 36, 0.25);
+}
+
+.vow-card.active-vow {
+    border-color: #f59e0b;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef2f2 100%);
+    box-shadow: 0 20px 48px -10px rgba(217, 119, 6, 0.35), 0 0 25px rgba(251, 191, 36, 0.35);
+}
+
+/* EMERGENCY EMOTIONAL FIRST-AID CARDS */
+.emergency-aid-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 241, 242, 0.9) 100%);
+    border: 1.5px solid rgba(254, 205, 211, 0.95);
+    box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.12), inset 0 1px 1px rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.emergency-aid-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: rgba(244, 63, 94, 0.65);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 36px -6px rgba(244, 63, 94, 0.28), 0 0 20px rgba(251, 113, 133, 0.25);
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes pulseGlowGold {
+
+    0%,
+    100% {
+        box-shadow: 0 0 16px rgba(244, 63, 94, 0.35), 0 0 35px rgba(217, 119, 6, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 32px rgba(244, 63, 94, 0.75), 0 0 60px rgba(245, 158, 11, 0.5);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.15);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
+
+@keyframes letterUnfold {
+    0% {
+        opacity: 0;
+        transform: translateY(45px) scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+.letter-unfolding {
+    animation: letterUnfold 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Equalizer bar animation for music visualizer */
+.eq-bar {
+    width: 3px;
+    background: #f43f5e;
+    border-radius: 9999px;
+    transition: height 0.15s ease;
+    height: 6px;
+}
+
+.eq-playing .eq-bar:nth-child(1) {
+    animation: eqAnim 0.7s infinite alternate ease-in-out;
+}
+
+.eq-playing .eq-bar:nth-child(2) {
+    animation: eqAnim 0.9s infinite alternate ease-in-out 0.2s;
+}
+
+.eq-playing .eq-bar:nth-child(3) {
+    animation: eqAnim 0.6s infinite alternate ease-in-out 0.4s;
+}
+
+@keyframes eqAnim {
+    0% {
+        height: 4px;
+    }
+
+    100% {
+        height: 16px;
+    }
+}
+
+/* Fairy Dust Sparkle Pointer Effect */
+.sparkle-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: sparkleFade 0.75s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes sparkleFade {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -80%) scale(1.4) rotate(140deg);
+        opacity: 0;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .sparkle-particle {
+        display: none !important;
+    }
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+    width: 7px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 241, 242, 0.6);
+    border-radius: 9999px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: rgba(244, 63, 94, 0.6);
+    border-radius: 9999px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(225, 29, 72, 0.9);
+}
+
+/* ==========================================
+   FRONT SCREEN: WELCOME CELEBRATION (LIQUID GLASS)
+   Natural Document Flow - 100% Native Smooth Window Scrolling
+   ========================================== */
+#welcomeFrontScreen {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem 1rem 5rem;
+    background: radial-gradient(circle at 50% 12%, rgba(255, 241, 242, 0.98) 0%, rgba(255, 228, 230, 0.95) 45%, rgba(254, 205, 211, 0.92) 100%);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#welcomeFrontScreen.hidden,
+#passcodeLockScreen.hidden,
+#mainCelebrationContent.hidden {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+#welcomeFrontScreen.welcome-fadeout {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.97);
+}
+
+.welcome-glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(45px) saturate(210%);
+    -webkit-backdrop-filter: blur(45px) saturate(210%);
+    border: 1.5px solid rgba(255, 255, 255, 0.98);
+    border-radius: 2.5rem;
+    box-shadow:
+        0 40px 100px -20px rgba(244, 63, 94, 0.22),
+        0 20px 45px -10px rgba(251, 146, 60, 0.14),
+        inset 0 2px 4px rgba(255, 255, 255, 1);
+    width: 100%;
+    max-width: 48rem;
+    margin: 1.5rem auto 4.5rem auto;
+    position: relative;
+}
+
+.welcome-unlock-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 1.25rem 2rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #f43f5e 0%, #ec4899 45%, #f59e0b 100%);
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    user-select: none;
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        0 18px 45px -8px rgba(244, 63, 94, 0.55),
+        0 0 25px rgba(251, 191, 36, 0.35);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    animation: pulseUnlockGlow 3s infinite ease-in-out;
+}
+
+.welcome-unlock-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, 0.95),
+        0 24px 55px rgba(244, 63, 94, 0.65),
+        0 0 30px rgba(251, 191, 36, 0.45);
+}
+
+.welcome-unlock-btn:active {
+    transform: scale(0.97);
+}
+
+@keyframes pulseUnlockGlow {
+    0%, 100% {
+        box-shadow:
+            inset 0 1px 2px rgba(255, 255, 255, 0.9),
+            0 16px 40px rgba(244, 63, 94, 0.45),
+            0 0 18px rgba(251, 191, 36, 0.25);
+    }
+    50% {
+        box-shadow:
+            inset 0 0 0 3px rgba(255, 255, 255, 0.98),
+            0 24px 55px rgba(244, 63, 94, 0.65),
+            0 0 28px rgba(251, 191, 36, 0.45);
+    }
+}
+
+/* Floating Bottom Action Bar on Front Screen */
+.welcome-floating-cta-btn {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.96) 0%, rgba(236, 72, 153, 0.96) 50%, rgba(245, 158, 11, 0.96) 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 14px 35px -5px rgba(244, 63, 94, 0.6),
+        0 0 20px rgba(251, 191, 36, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: pulseFloatingGlow 3s infinite ease-in-out;
+}
+
+.welcome-floating-cta-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 18px 45px -5px rgba(244, 63, 94, 0.75),
+        0 0 25px rgba(251, 191, 36, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+@keyframes pulseFloatingGlow {
+    0%, 100% {
+        box-shadow:
+            0 12px 30px -5px rgba(244, 63, 94, 0.55),
+            inset 0 1px 2px rgba(255, 255, 255, 0.85);
+    }
+    50% {
+        box-shadow:
+            0 18px 45px -5px rgba(244, 63, 94, 0.75),
+            0 0 25px rgba(251, 191, 36, 0.5),
+            inset 0 1px 2px rgba(255, 255, 255, 0.95);
+    }
+}
+
+.cake-card-interactive {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cake-card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -6px rgba(244, 63, 94, 0.25);
+}
+
+.cake-card-interactive:active {
+    transform: scale(0.98);
+}
+
+.celestial-anim {
+    animation: celestialFloat 4s ease-in-out infinite alternate;
+    display: inline-block;
+}
+
+@keyframes celestialFloat {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    100% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+.sparkle-anim {
+    animation: sparkleTwinkle 2.5s ease-in-out infinite alternate;
+    display: inline-block;
+}
+
+@keyframes sparkleTwinkle {
+    0% {
+        opacity: 0.75;
+        transform: scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+.candle-flame-flicker {
+    animation: candleFlameAnim 1.2s ease-in-out infinite alternate;
+    transform-origin: center bottom;
+    display: inline-block;
+}
+
+@keyframes candleFlameAnim {
+    0% {
+        transform: scale(1) rotate(-3deg);
+        filter: drop-shadow(0 0 4px #f59e0b) drop-shadow(0 0 10px #fbbf24);
+    }
+    100% {
+        transform: scale(1.18) rotate(4deg);
+        filter: drop-shadow(0 0 8px #f59e0b) drop-shadow(0 0 16px #f43f5e);
+    }
+}
+
+/* ==========================================
+   FRONT SCREEN: LIQUID GLASS PASSWORD VAULT
+   Natural Document Flow - 100% Native Smooth Window Scrolling
+   ========================================== */
+#passcodeLockScreen {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem 4rem;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 241, 242, 0.96) 0%, rgba(255, 228, 230, 0.93) 50%, rgba(254, 205, 211, 0.91) 100%);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* ==========================================
+   MAIN CELEBRATION WEBSITE CONTENT WRAPPER
+   Natural Document Flow - 100% Native Smooth Window Scrolling
+   ========================================== */
+#mainCelebrationContent {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: opacity 0.4s ease;
+}
+
+.vault-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(35px) saturate(200%);
+    -webkit-backdrop-filter: blur(35px) saturate(200%);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 30px 80px -15px rgba(225, 29, 72, 0.28),
+        0 12px 30px -6px rgba(0, 0, 0, 0.05),
+        inset 0 2px 3px rgba(255, 255, 255, 1),
+        inset 0 -2px 4px rgba(244, 63, 94, 0.08);
+    border-radius: 32px;
+    width: 95%;
+    max-width: 480px;
+    margin: 1.5rem auto;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Full Keyboard Key Styling */
+.kb-key {
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    max-width: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 6px -1px rgba(244, 63, 94, 0.12), 0 1px 2px rgba(0, 0, 0, 0.04);
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 0;
+}
+
+.kb-key:hover {
+    transform: translateY(-2px) scale(1.06);
+    background: #ffffff;
+    color: #e11d48;
+    box-shadow: 0 6px 14px -2px rgba(244, 63, 94, 0.26);
+    border-color: rgba(244, 63, 94, 0.4);
+}
+
+.kb-key:active {
+    transform: scale(0.92);
+    background: rgba(254, 205, 211, 0.85);
+}
+
+.kb-key-action {
+    max-width: 48px;
+    background: rgba(254, 226, 226, 0.85);
+    color: #e11d48;
+    font-size: 0.95rem;
+}
+
+.kb-key-enter {
+    max-width: 48px;
+    background: linear-gradient(135deg, #f43f5e, #fb7185);
+    color: #ffffff;
+    font-size: 1rem;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 3px 10px -1px rgba(244, 63, 94, 0.35);
+}
+
+.kb-key-enter:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #e11d48, #f43f5e);
+    box-shadow: 0 6px 16px -2px rgba(244, 63, 94, 0.45);
+}
+
+
+@keyframes shakeWobble {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-14px) rotate(-1.5deg);
+    }
+
+    30% {
+        transform: translateX(12px) rotate(1.5deg);
+    }
+
+    45% {
+        transform: translateX(-9px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translateX(7px) rotate(1deg);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+}
+
+.animate-wobble {
+    animation: shakeWobble 0.45s ease-in-out;
+}
+
+/* ==========================================
+           SISTER SURPRISE FLOW MODAL & MYSTERY BOXES
+           ========================================== */
+.surprise-card {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 30px 80px -15px rgba(225, 29, 72, 0.32),
+        0 12px 30px -6px rgba(0, 0, 0, 0.08),
+        inset 0 2px 3px rgba(255, 255, 255, 1);
+    border-radius: 32px;
+    width: 95%;
+    max-width: 580px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mystery-box-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes boxPopBounce {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-scale-up {
+    animation: boxPopBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* =========================================================
+           MOBILE PERFORMANCE, ULTRA-HIGH CONTRAST & RESPONSIVE POLISH
+           ========================================================= */
+#letterContentText {
+    color: #0f172a;
+    font-size: 1.08rem;
+    line-height: 1.88;
+}
+
+#letterContentText p {
+    color: #0f172a;
+}
+
+.liquid-glass {
+    color: #0f172a;
+}
+
+/* =========================================================
+   MOBILE PROFESSIONAL PERFECTION & ULTRA-POLISHED RESPONSIVE DESIGN
+   Tuned for iPhones, Galaxy, and all Mobile Screens (320px - 640px)
+   ========================================================= */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ========================================================
+   TOUCHSCREEN OPTIMIZATION: ZERO STICKY HOVER EXPANSIONS
+   ======================================================== */
+@media (hover: none), (pointer: coarse) {
+    /* Touch devices: eliminate sticky hover expansions, translations, and shadow jumps */
+    .kb-key:hover,
+    .kb-key-enter:hover,
+    .ttt-cell:hover,
+    .ws-cell:hover,
+    .memory-card:hover .memory-card-back,
+    .floating-balloon:hover,
+    .arcade-tab-btn:hover,
+    .welcome-unlock-btn:hover,
+    .cake-card-interactive:hover,
+    .sweet-sister-card:hover,
+    .vow-card:hover,
+    .emergency-aid-card:hover,
+    .liquid-button-primary:hover,
+    .liquid-glass-pill:hover,
+    .wax-seal:hover,
+    #secretSkipZone:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Clean, tactile active press feedback on tap */
+    .kb-key:active {
+        transform: scale(0.92) !important;
+        background: rgba(254, 205, 211, 0.95) !important;
+    }
+
+    .ttt-cell:active:not(.taken),
+    .ws-cell:active,
+    .memory-card:active,
+    .arcade-tab-btn:active,
+    button:active {
+        transform: scale(0.96) !important;
+    }
+}
+
+@media (max-width: 640px) {
+
+    /* Performance optimization on mobile GPU */
+    .liquid-orb-bg {
+        filter: blur(12px) !important;
+        opacity: 0.5 !important;
+    }
+
+    .liquid-blob {
+        mix-blend-mode: normal !important;
+        opacity: 0.4 !important;
+        animation-duration: 36s !important;
+    }
+
+    /* Tame heavy blurs on mobile to prevent GPU fill-rate throttling */
+    .blur-3xl {
+        filter: blur(10px) !important;
+        -webkit-filter: blur(10px) !important;
+    }
+    .blur-2xl {
+        filter: blur(8px) !important;
+        -webkit-filter: blur(8px) !important;
+    }
+    .backdrop-blur-xl, .backdrop-blur-md {
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+    }
+
+    .liquid-glass,
+    .liquid-glass-card,
+    .vault-card,
+    .surprise-card,
+    .welcome-glass-card {
+        backdrop-filter: blur(6px) saturate(130%) !important;
+        -webkit-backdrop-filter: blur(6px) saturate(130%) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* Responsive Fortune Wheel Canvas */
+    #fortuneWheelCanvas {
+        max-width: min(310px, 84vw) !important;
+        max-height: min(310px, 84vw) !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 !important;
+        margin: 0 auto !important;
+    }
+
+    /* Responsive Word Finder Grid */
+    .ws-grid {
+        max-width: 100% !important;
+        gap: 2px !important;
+        padding: 0.4rem !important;
+    }
+
+    .ws-cell {
+        font-size: 0.74rem !important;
+    }
+
+    /* 1. WELCOME SCREEN ON MOBILE */
+    #welcomeFrontScreen {
+        padding: 1rem 0.65rem 4rem !important;
+    }
+
+    .welcome-glass-card {
+        padding: 1.25rem 0.85rem !important;
+        border-radius: 24px !important;
+        margin: 0.5rem auto 2.5rem auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: 0 16px 40px -10px rgba(244, 63, 94, 0.18) !important;
+    }
+
+    .welcome-unlock-btn {
+        padding: 1rem 1.15rem !important;
+        border-radius: 20px !important;
+        width: 100% !important;
+        font-size: 0.95rem !important;
+        box-shadow: 0 12px 30px -6px rgba(244, 63, 94, 0.5) !important;
+    }
+
+    .cake-card-interactive {
+        padding: 0.85rem 0.75rem !important;
+        border-radius: 20px !important;
+    }
+
+    /* 2. PASSCODE VAULT ON MOBILE */
+    #passcodeLockScreen {
+        padding: 1rem 0.5rem 3rem !important;
+    }
+
+    .vault-card {
+        width: 100% !important;
+        max-width: 420px !important;
+        padding: 1.15rem 0.75rem !important;
+        border-radius: 24px !important;
+    }
+
+    #passcodeTextInput {
+        font-size: 1.15rem !important;
+        padding: 0.65rem 1rem !important;
+        letter-spacing: 0.15em !important;
+        border-radius: 14px !important;
+    }
+
+    /* QWERTY Keyboard fits all mobile phones smoothly */
+    .kb-key {
+        height: 39px !important;
+        font-size: 0.92rem !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        border-radius: 7px !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        max-width: 36px !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08) !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(244, 63, 94, 0.25) !important;
+    }
+
+    .kb-key-action {
+        flex: 1.3 1 0 !important;
+        max-width: 42px !important;
+        font-size: 0.9rem !important;
+        background: #ffe4e6 !important;
+        color: #be123c !important;
+    }
+
+    .kb-key-enter {
+        flex: 1.3 1 0 !important;
+        max-width: 42px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* 3. FLOATING NAVBAR ON MOBILE */
+    header {
+        top: 6px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    /* 4. ENVELOPE ON MOBILE */
+    .envelope-wrapper {
+        max-width: 310px !important;
+        height: 205px !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .wax-seal {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 16px !important;
+    }
+
+    /* 5. PARCHMENT LETTER ON MOBILE */
+    .parchment-letter {
+        padding: 1.25rem 0.9rem !important;
+        border-radius: 20px !important;
+        background: rgba(255, 255, 255, 0.97) !important;
+        line-height: 1.8 !important;
+        background-image:
+            radial-gradient(circle at 95% 8%, rgba(254, 205, 211, 0.35) 0%, transparent 45%),
+            radial-gradient(circle at 8% 92%, rgba(254, 240, 138, 0.3) 0%, transparent 45%) !important;
+    }
+
+    #letterContentText {
+        font-size: 0.98rem !important;
+        line-height: 1.8 !important;
+        color: #0f172a !important;
+    }
+
+    #letterContentText p {
+        color: #0f172a !important;
+        margin-bottom: 1rem !important;
+        font-weight: 450 !important;
+    }
+
+    .drop-cap:first-letter {
+        font-size: 2.6rem !important;
+        line-height: 0.85 !important;
+        padding-top: 4px !important;
+        padding-right: 6px !important;
+    }
+
+    #birthdayWishesCardSection,
+    #birthdayCakeSection,
+    #brotherVowsSection,
+    #emergencyKitSection,
+    #replySection,
+    #finalSecretVaultSection {
+        margin-top: 2rem !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+
+    .liquid-glass-card {
+        padding: 1.15rem 0.85rem !important;
+        border-radius: 22px !important;
+    }
+
+    /* 7. MODALS ON MOBILE */
+    .surprise-card {
+        width: 95% !important;
+        max-width: 360px !important;
+        padding: 1.25rem 0.85rem !important;
+        border-radius: 24px !important;
+    }
+
+    /* Text inputs */
+    #replyNoteInput,
+    #finalVaultPassInput {
+        font-size: 14px !important;
+        padding: 0.75rem !important;
+    }
+}
+
+@media (max-width: 380px) {
+    /* Ultra-compact phones (iPhone SE, smaller Androids 320px - 360px) */
+    .envelope-wrapper {
+        max-width: 275px !important;
+        height: 185px !important;
+    }
+
+    .kb-key {
+        height: 35px !important;
+        font-size: 0.84rem !important;
+        border-radius: 6px !important;
+        max-width: 30px !important;
+        padding: 0 !important;
+    }
+
+    .kb-key-action, .kb-key-enter {
+        max-width: 36px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Word Finder on compact screens */
+    .ws-grid {
+        gap: 1.5px !important;
+        padding: 0.25rem !important;
+    }
+
+    .ws-cell {
+        font-size: 0.66rem !important;
+        border-radius: 0.2rem !important;
+    }
+
+    /* Memory Match on compact screens */
+    .memory-grid {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 0.2rem !important;
+        max-width: 100% !important;
+    }
+
+    .memory-card-front span:first-child {
+        font-size: 1.1rem !important;
+    }
+
+    .memory-card-front span:last-child {
+        font-size: 7px !important;
+    }
+
+    .balloon-arena {
+        height: 260px !important;
+    }
+
+    #fortuneWheelCanvas {
+        max-width: 265px !important;
+        max-height: 265px !important;
+    }
+
+    h1 span.font-handwriting {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* High-Performance Rendering for Long Content */
+#birthdayWishesCardSection,
+#birthdayCakeSection,
+#brotherVowsSection,
+#emergencyKitSection,
+#letterSection,
+#replySection,
+#finalSecretVaultSection {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 550px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================================
+   KAJAL DIDI'S BIRTHDAY GAMES ARCADE STYLES
+   ======================================================== */
+.arcade-tab-btn {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(254, 205, 211, 0.85);
+    color: #475569;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arcade-tab-btn:hover {
+    background: #ffffff;
+    color: #e11d48;
+    border-color: #f43f5e;
+    transform: translateY(-1px);
+}
+
+.arcade-tab-btn.active {
+    background: linear-gradient(135deg, #e11d48 0%, #ec4899 50%, #f59e0b 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 16px -2px rgba(244, 63, 94, 0.45);
+    transform: scale(1.04);
+}
+
+.arcade-panel {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.arcade-panel.hidden {
+    display: none !important;
+}
+
+/* 1. ZERO CROSS (TIC-TAC-TOE) */
+.ttt-board-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+    max-width: 290px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ttt-cell {
+    aspect-ratio: 1;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(254, 205, 211, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 4px 12px rgba(244, 63, 94, 0.08);
+}
+
+.ttt-cell:hover:not(.taken) {
+    background: #ffffff;
+    border-color: #f43f5e;
+    transform: scale(1.06);
+    box-shadow: 0 8px 20px rgba(244, 63, 94, 0.2);
+}
+
+.ttt-cell.taken {
+    cursor: default;
+}
+
+.ttt-cell.winner-cell {
+    background: linear-gradient(135deg, rgba(254, 240, 138, 0.95), rgba(254, 205, 211, 0.95)) !important;
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.6) !important;
+    animation: pulse 1s infinite;
+}
+
+/* 2. WORD FINDER */
+.ws-grid-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ws-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5px;
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 1.25rem;
+    border: 1.5px solid rgba(254, 205, 211, 0.85);
+    box-shadow: inset 0 2px 5px rgba(244, 63, 94, 0.05);
+}
+
+.ws-cell {
+    aspect-ratio: 1;
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(254, 205, 211, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.78rem;
+    color: #1e293b;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease;
+}
+
+.ws-cell:hover:not(.ws-found) {
+    background: #ffe4e6;
+    border-color: #f43f5e;
+    transform: scale(1.08);
+}
+
+.ws-cell.ws-selected {
+    background: #f43f5e !important;
+    color: #ffffff !important;
+    border-color: #e11d48 !important;
+    transform: scale(1.12);
+    box-shadow: 0 4px 10px rgba(244, 63, 94, 0.45);
+    z-index: 2;
+}
+
+.ws-cell.ws-found {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: #ffffff !important;
+    border-color: #047857 !important;
+    font-weight: 900;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
+}
+
+.ws-cell.ws-found.ws-selected {
+    background: linear-gradient(135deg, #f43f5e, #e11d48) !important;
+    border-color: #be123c !important;
+    transform: scale(1.12);
+    box-shadow: 0 4px 10px rgba(244, 63, 94, 0.55);
+    z-index: 3;
+}
+
+.ws-cell.ws-hint {
+    animation: bounce 0.6s 3;
+    background: #fef08a !important;
+    border-color: #eab308 !important;
+    color: #854d0e !important;
+}
+
+.ws-word-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(254, 205, 211, 0.85);
+    color: #475569;
+    transition: all 0.2s ease;
+}
+
+.ws-word-badge.found {
+    background: #ecfdf5 !important;
+    border-color: #6ee7b7 !important;
+    color: #065f46 !important;
+    text-decoration: line-through;
+    opacity: 0.85;
+}
+
+/* 3. MEMORY MATCH (30 Cards / 15 Pairs) */
+.memory-grid-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0.25rem 0;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.35rem;
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 420px) {
+    .memory-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.25rem;
+        max-width: 360px;
+    }
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    perspective: 1000px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 0.65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(244, 63, 94, 0.08);
+}
+
+.memory-card-back {
+    background: linear-gradient(135deg, rgba(255, 228, 230, 0.95), rgba(254, 243, 199, 0.9));
+    border: 1.5px solid rgba(253, 164, 175, 0.85);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.memory-card:hover:not(.flipped):not(.matched) .memory-card-back {
+    border-color: #f43f5e;
+    transform: scale(1.04);
+}
+
+.memory-card-front {
+    transform: rotateY(180deg);
+    background: #ffffff;
+    border: 1.5px solid #f43f5e;
+}
+
+.memory-card.matched .memory-card-front {
+    border-color: #10b981 !important;
+    background: #ecfdf5 !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.45) !important;
+}
+
+/* 4. BALLOON POP ARENA */
+.balloon-arena {
+    height: 310px;
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 241, 242, 0.92), rgba(254, 243, 199, 0.75));
+    border: 2px solid rgba(254, 205, 211, 0.88);
+    box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.95);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-balloon {
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.15s ease;
+    animation: balloonFloat linear forwards;
+    filter: drop-shadow(0 6px 12px rgba(244, 63, 94, 0.25));
+}
+
+.floating-balloon:hover {
+    transform: scale(1.18);
+}
+
+@keyframes balloonFloat {
+    0% {
+        transform: translateY(330px) rotate(0deg);
+        opacity: 0.95;
+    }
+    100% {
+        transform: translateY(-90px) rotate(8deg);
+        opacity: 0.95;
+    }
+}
+
+.balloon-pop-burst {
+    position: absolute;
+    pointer-events: none;
+    animation: popDisappear 0.7s forwards;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: #e11d48;
+    z-index: 30;
+}
+
+@keyframes popDisappear {
+    0% { transform: scale(1) translateY(0); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-35px); opacity: 0; }
+}
+
+/* 5. FORTUNE WHEEL */
+.wheel-pointer-container {
+    animation: bounce 1.2s infinite;
+}
+
+#fortuneWheelCanvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.floating-balloon {
+    touch-action: manipulation;
+}
+
+/* ========================================================
+   SEQUENTIAL GAME QUEST & CELEBRATION LOCK STYLES
+   ======================================================== */
+.quest-mode .celebration-exclusive {
+    display: none !important;
+}
+
+.quest-mode #sisterGamesArcadeSection {
+    margin-top: 1.5rem !important;
+    margin-bottom: 3.5rem !important;
+}
+
+.arcade-tab-btn.locked {
+    opacity: 0.55 !important;
+    cursor: not-allowed !important;
+    filter: grayscale(35%);
+    pointer-events: none;
+    border-color: rgba(203, 213, 225, 0.6) !important;
+    background: rgba(241, 245, 249, 0.7) !important;
+    color: #94a3b8 !important;
+}
+
+.arcade-tab-btn.completed {
+    border-color: rgba(16, 185, 129, 0.7) !important;
+    background: rgba(236, 253, 245, 0.85) !important;
+    color: #065f46 !important;
+}
+
+.quest-progress-fill {
+    transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes questPulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(244, 63, 94, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(244, 63, 94, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+    }
+}
+
+.quest-banner-glow {
+    animation: questPulseGlow 2.5s infinite ease-in-out;
+}
+
+/* ========================================================
+   KAJAL DIDI'S BESPOKE PHOTO SHOWCASE & PORTRAIT STYLES
+   ======================================================== */
+.didi-photo-halo {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.didi-photo-halo:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.didi-halo-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #fb7185, #f59e0b, #ec4899, #a855f7);
+    filter: blur(8px);
+    opacity: 0.7;
+    animation: didiGlowSpin 6s linear infinite alternate;
+    z-index: 0;
+}
+
+@keyframes didiGlowSpin {
+    0% {
+        filter: blur(8px) hue-rotate(0deg);
+        opacity: 0.65;
+        transform: scale(0.98);
+    }
+    100% {
+        filter: blur(14px) hue-rotate(45deg);
+        opacity: 0.9;
+        transform: scale(1.04);
+    }
+}
+
+.didi-royal-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid rgba(251, 207, 232, 0.95);
+    border-radius: 2rem;
+    box-shadow: 0 16px 36px -8px rgba(244, 63, 94, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.didi-royal-card:hover {
+    box-shadow: 0 20px 42px -6px rgba(244, 63, 94, 0.35), 0 0 0 2px rgba(251, 191, 36, 0.8) inset;
+}
+
+/* Scrapbook Polaroid Photo Card */
+.didi-polaroid {
+    background: #ffffff;
+    padding: 10px 10px 18px 10px;
+    border-radius: 14px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.didi-polaroid:hover {
+    transform: rotate(0deg) scale(1.03) !important;
+    box-shadow: 0 20px 38px rgba(244, 63, 94, 0.25), 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.didi-polaroid-tape {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 72px;
+    height: 20px;
+    background: rgba(254, 205, 211, 0.8);
+    border: 1px dashed rgba(244, 63, 94, 0.4);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+}
+
+/* Authentic Postal Stamp with Photo */
+.didi-stamp-container {
+    position: relative;
+    display: inline-block;
+    padding: 4px;
+    background: #fff;
+    border: 2px dashed #f43f5e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.18);
+    transform: rotate(3deg);
+    transition: transform 0.25s ease;
+}
+
+.didi-stamp-container:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Floating mini avatar for headers & scoreboard */
+.didi-avatar-ring {
+    border: 2.5px solid #fb7185;
+    box-shadow: 0 0 10px rgba(251, 113, 133, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.didi-avatar-ring:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   BHAI'S HEART COLLAGE & MEMORY CAROUSEL STYLES
+   ========================================== */
+#bhaiHeartCollageModal {
+    z-index: 999999 !important;
+}
+
+#bhaiHeartCollageDialog {
+    z-index: 1000000 !important;
+}
+
+.w-9 { width: 2.25rem !important; }
+.h-9 { height: 2.25rem !important; }
+.w-10 { width: 2.5rem !important; }
+.h-10 { height: 2.5rem !important; }
+.w-11 { width: 2.75rem !important; }
+.h-11 { height: 2.75rem !important; }
+
+.bhai-heart-container {
+    position: relative;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 12px 4px;
+}
+
+.bhai-heart-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+    .bhai-heart-grid {
+        gap: 8px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .bhai-heart-container {
+        max-width: 360px;
+        padding: 6px 2px;
+    }
+    .bhai-heart-grid {
+        gap: 3.5px;
+    }
+    .bhai-heart-tile {
+        border-radius: 9px !important;
+        border-width: 1.5px !important;
+    }
+    .bhai-heart-center-badge {
+        border-radius: 12px !important;
+        padding: 3px 2px !important;
+    }
+    .bhai-side-arrow-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 20px !important;
+    }
+    .bhai-side-prev {
+        left: 3px !important;
+    }
+    .bhai-side-next {
+        right: 3px !important;
+    }
+}
+
+.bhai-heart-tile {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid rgba(254, 205, 211, 0.9);
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+    background: #fff;
+}
+
+.bhai-heart-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+    pointer-events: none;
+}
+
+.bhai-heart-tile:hover, .bhai-heart-tile:active {
+    transform: scale(1.18);
+    z-index: 25;
+    box-shadow: 0 10px 24px rgba(244, 63, 94, 0.45), 0 0 16px rgba(251, 191, 36, 0.65);
+    border-color: #fbbf24;
+}
+
+.bhai-heart-tile:hover img {
+    transform: scale(1.08);
+}
+
+.bhai-heart-center-badge {
+    grid-column: span 3;
+    aspect-ratio: 3 / 1;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fef3c7 100%);
+    border: 2px solid #fb7185;
+    box-shadow: 0 8px 24px rgba(244, 63, 94, 0.3), inset 0 0 12px rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px;
+    text-align: center;
+    animation: heartGlowPulse 2.5s ease-in-out infinite;
+    transition: transform 0.25s ease;
+}
+
+.bhai-heart-center-badge:hover {
+    transform: scale(1.05);
+}
+
+@keyframes heartGlowPulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(244, 63, 94, 0.3), 0 0 0 0 rgba(244, 63, 94, 0.4);
+    }
+    50% {
+        box-shadow: 0 12px 32px rgba(244, 63, 94, 0.5), 0 0 20px 4px rgba(251, 113, 133, 0.35);
+    }
+}
+
+/* High-Performance Hardware-Accelerated Side Slider */
+.bhai-slider-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+    touch-action: pan-y;
+}
+
+.bhai-slider-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+    padding: 2px 6px;
+}
+
+.bhai-slider-slide img {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Floating Side Slider Arrow Buttons */
+.bhai-side-arrow-btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #e11d48;
+    border: 2px solid #fecdd3;
+    box-shadow: 0 8px 24px rgba(225, 29, 72, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 30;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(8px);
+}
+
+.bhai-side-arrow-btn:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 12px 30px rgba(225, 29, 72, 0.45);
+    color: #be123c;
+    border-color: #f43f5e;
+}
+
+.bhai-side-arrow-btn:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.bhai-side-prev {
+    left: 8px;
+}
+
+.bhai-side-next {
+    right: 8px;
+}
+
+/* Slide Indicator Dots */
+.bhai-slider-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: #fbcfe8;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.bhai-slider-dot.active {
+    width: 22px;
+    background: linear-gradient(90deg, #f43f5e, #fb7185);
+    box-shadow: 0 2px 6px rgba(244, 63, 94, 0.4);
+}
+
+.bhai-thumb-item {
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.bhai-thumb-item.active {
+    border-color: #f43f5e;
+    transform: scale(1.15);
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.6);
+}
+
+/* Floating Reaction Hearts */
+.flying-reaction-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    animation: flyReactionHeart 1.4s ease-out forwards;
+}
+
+@keyframes flyReactionHeart {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.6) rotate(0deg);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translate(var(--tx, 0), -70px) scale(1.3) rotate(var(--rot, 15deg));
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx2, 0), -160px) scale(0.8) rotate(var(--rot2, -15deg));
+    }
+}
+
+/* ============================================================
+   EXPLICIT SQUARE SIZING & COLLAGE / SLIDER STYLING (Precompiled CSS Safe)
+   ============================================================ */
+
+.aspect-square {
+    aspect-ratio: 1 / 1 !important;
+}
+
+/* Sub-View Switcher Buttons (Square Grid vs Heart Mosaic) */
+.bhai-subview-btn {
+    padding: 6px 14px !important;
+    border-radius: 9999px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border: 1.5px solid #fecdd3 !important;
+    background: #fff1f2 !important;
+    color: #881337 !important;
+    box-shadow: 0 2px 6px rgba(244, 63, 94, 0.08) !important;
+}
+
+.bhai-subview-btn:hover {
+    background: #ffe4e6 !important;
+    color: #be123c !important;
+    transform: translateY(-1px) !important;
+}
+
+.bhai-subview-btn:active {
+    transform: scale(0.96) !important;
+}
+
+.bhai-subview-btn.active {
+    background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%) !important;
+    color: #ffffff !important;
+    border-color: #be123c !important;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35) !important;
+}
+
+/* 1. Curated Square Photo Grid (Tab 1 Default Sub-View) */
+.bhai-curated-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    max-width: 780px !important;
+    margin: 0 auto !important;
+    padding: 6px 2px !important;
+}
+
+@media (min-width: 500px) {
+    .bhai-curated-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .bhai-curated-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 14px !important;
+    }
+}
+
+.bhai-curated-card {
+    position: relative !important;
+    aspect-ratio: 1 / 1 !important;
+    width: 100% !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    border: 2px solid rgba(254, 205, 211, 0.9) !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(244, 63, 94, 0.12) !important;
+    cursor: pointer !important;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.bhai-curated-card:hover, .bhai-curated-card:active {
+    transform: translateY(-4px) scale(1.02) !important;
+    border-color: #f43f5e !important;
+    box-shadow: 0 10px 24px rgba(244, 63, 94, 0.28) !important;
+    z-index: 10 !important;
+}
+
+.bhai-curated-ambient-bg {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: blur(10px) !important;
+    opacity: 0.35 !important;
+    transform: scale(1.15) !important;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+
+.bhai-curated-photo {
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+
+.bhai-curated-card:hover .bhai-curated-photo {
+    transform: scale(1.06) !important;
+}
+
+.bhai-curated-sticker {
+    position: absolute !important;
+    top: 6px !important;
+    left: 6px !important;
+    z-index: 20 !important;
+    padding: 2.5px 8px !important;
+    border-radius: 9999px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(8px) !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    color: #be123c !important;
+    border: 1px solid #fecdd3 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    white-space: nowrap !important;
+    max-width: calc(100% - 14px) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.2 !important;
+}
+
+.bhai-curated-banner {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 20 !important;
+    padding: 6px 8px !important;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.45) 60%, transparent 100%) !important;
+    text-align: left !important;
+}
+
+.bhai-curated-title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.bhai-curated-hint {
+    font-size: 9px !important;
+    font-weight: 600 !important;
+    color: #fecdd3 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-top: 1px !important;
+}
+
+/* 2. Side Slider Slide & Square Frame (Tab 2) */
+.bhai-slider-slide-box {
+    background: linear-gradient(180deg, rgba(255, 241, 242, 0.7) 0%, #ffffff 100%) !important;
+    border-radius: 24px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(254, 205, 211, 0.85) !important;
+    box-shadow: 0 4px 16px rgba(244, 63, 94, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 14px !important;
+}
+
+@media (min-width: 768px) {
+    .bhai-slider-slide-box {
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 18px 22px !important;
+        gap: 24px !important;
+    }
+}
+
+/* Guaranteed Exact Square Frame for Slider: zero cropping, 100% visible */
+.bhai-slider-square-frame {
+    position: relative !important;
+    width: 220px !important;
+    height: 220px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    border: 2px solid #fecdd3 !important;
+    box-shadow: 0 8px 24px rgba(244, 63, 94, 0.15), inset 0 0 12px rgba(244, 63, 94, 0.05) !important;
+    flex-shrink: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px !important;
+}
+
+@media (min-width: 640px) {
+    .bhai-slider-square-frame {
+        width: 260px !important;
+        height: 260px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .bhai-slider-square-frame {
+        width: 280px !important;
+        height: 280px !important;
+    }
+}
+
+.bhai-slider-ambient-bg {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: blur(12px) !important;
+    opacity: 0.38 !important;
+    transform: scale(1.2) !important;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+
+.bhai-slider-main-photo {
+    position: relative !important;
+    z-index: 10 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.bhai-slider-sticker-tag {
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    z-index: 20 !important;
+    padding: 3px 10px !important;
+    border-radius: 9999px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(8px) !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    color: #be123c !important;
+    border: 1px solid #fecdd3 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    white-space: nowrap !important;
+}
+
+.bhai-slider-info-col {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    gap: 10px !important;
+}
+
+@media (min-width: 768px) {
+    .bhai-slider-info-col {
+        width: 50% !important;
+    }
+}
+
+
+
