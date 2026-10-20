@@ -1813,7 +1813,7 @@
                 <!-- SPECIAL BROTHER'S PHOTO COLLAGE INVITATION (AT END OF LETTER) -->
                 <div class="mt-8 pt-8 border-t-2 border-rose-200/90 text-center space-y-5" id="letterCollageInviteCard">
                     
-                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500/15 via-pink-500/15 to-amber-500/15 border border-rose-300 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-black tracking-widest text-rose-900 uppercase shadow-xs">
+                    <div class="bhai-invite-badge mx-auto">
                         <span>📸</span>
                         <span>BROTHER'S PHOTO COLLAGE • 13 MEMORIES</span>
                         <span>💝</span>
@@ -1822,16 +1822,16 @@
                     <!-- Heart & Crown Icon with Kajal Didi's Royal Portrait -->
                     <div class="relative my-2 inline-block">
                         <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-2xl filter drop-shadow z-20 animate-bounce">👑</span>
-                        <div class="w-18 h-18 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-tr from-rose-500 via-pink-400 to-amber-400 shadow-xl flex items-center justify-center mx-auto">
+                        <div class="bhai-invite-avatar-ring w-20 h-20 sm:w-22 sm:h-22 mx-auto flex items-center justify-center">
                             <img src="images/photo2_thumb.webp" alt="Kajal Didi" class="w-full h-full rounded-full object-cover border-2 border-white shadow-inner" style="object-position: center 20%;" />
                         </div>
                     </div>
 
-                    <div class="space-y-2">
-                        <h3 class="font-serif-title font-extrabold text-xl sm:text-3xl text-slate-900 leading-snug">
+                    <div class="space-y-2 px-2 max-w-xl mx-auto">
+                        <h3 class="font-serif-title font-extrabold text-xl sm:text-2xl md:text-3xl text-slate-900 leading-snug">
                             Do you want to see a photo collage that your brother made for you? 📸💝
                         </h3>
-                        <p class="text-xs sm:text-sm md:text-base text-rose-800 font-semibold max-w-lg mx-auto leading-relaxed italic">
+                        <p class="text-xs sm:text-sm md:text-base text-rose-800 font-semibold leading-relaxed italic">
                             “I didn't have many photos of you, Didi, so I gathered every single one I had and crafted this special heart collage with all my love...”
                         </p>
                     </div>
@@ -1848,14 +1848,14 @@
                     </div>
 
                     <!-- Action Button -->
-                    <div class="pt-2">
+                    <div class="pt-2 px-2">
                         <button type="button" onclick="openBhaiHeartCollageModal()"
-                            class="w-full sm:w-auto mx-auto bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 hover:from-rose-600 hover:via-pink-600 hover:to-amber-600 text-white font-black text-sm sm:text-base py-4 px-9 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+                            class="bhai-invite-btn">
                             <span class="text-xl">✨</span>
                             <span>Open Didi's Heart Collage & Side Slider</span>
                             <span class="text-xl">💖</span>
                         </button>
-                        <p class="text-[11px] text-slate-500 font-bold mt-2">
+                        <p class="text-[11px] sm:text-xs text-slate-500 font-bold mt-2">
                             Features interactive Heart Formation, ultra-smooth Side Slider & scrapbook notes!
                         </p>
                     </div>
@@ -2452,37 +2452,37 @@
             class="relative w-full max-w-4xl max-h-[96vh] flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-rose-300 transform scale-95 transition-all duration-300">
 
             <!-- Top Header Bar with Cut Screen Button -->
-            <div class="flex items-center justify-between border-b border-rose-200/90 px-3.5 sm:px-6 py-3 bg-white z-20">
-                <div class="flex items-center gap-2 sm:gap-2.5">
+            <div class="bhai-modal-header">
+                <div class="bhai-modal-brand">
                     <img src="images/photo2_thumb.webp" alt="Kajal Didi"
-                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-pink-400 shadow-xs flex-shrink-0" style="object-position: center 20%;" />
+                        class="bhai-modal-avatar" style="object-position: center 20%;" />
                     <div>
-                        <h3 class="font-serif-title font-extrabold text-slate-900 text-xs sm:text-base flex items-center gap-1.5">
+                        <h3 class="bhai-modal-title">
                             <span>Bhai's Photo Collage</span>
                             <span class="text-rose-600">💝</span>
                         </h3>
-                        <p class="text-[10px] sm:text-xs text-rose-700 font-bold">
+                        <p class="bhai-modal-subtitle">
                             Crafted with pure love for Kajal Didi • 13 Memories
                         </p>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-1.5 sm:gap-2">
+                <div class="bhai-modal-actions">
                     <button type="button" onclick="triggerFloatingHeartBurst(event)"
-                        class="liquid-glass-pill text-rose-700 px-3 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-1"
+                        class="bhai-btn-love"
                         title="Send Love to Didi">
                         <span>💖</span>
                         <span class="hidden sm:inline">Send Love</span>
                     </button>
                     <!-- CUT SCREEN BUTTON (Prominent) -->
                     <button type="button" onclick="closeBhaiHeartCollageModal()"
-                        class="bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-300 px-3 py-1.5 rounded-full text-xs font-black transition flex items-center gap-1 shadow-xs active:scale-95"
+                        class="bhai-btn-cut"
                         title="Cut Screen / Exit">
                         <span>✂️</span>
                         <span>Cut Screen</span>
                     </button>
                     <button type="button" onclick="closeBhaiHeartCollageModal()"
-                        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-black flex items-center justify-center transition shadow-xs text-sm"
+                        class="bhai-btn-close"
                         title="Close">
                         ✕
                     </button>
@@ -2490,19 +2490,19 @@
             </div>
 
             <!-- View Switcher Tabs (Photo Collage, Side Slider, Scrapbook) -->
-            <div class="flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 bg-rose-50/80 border-b border-rose-200 text-xs font-black">
+            <div class="bhai-tabs-bar">
                 <button type="button" id="bhaiTabBtn_heart" onclick="setBhaiCollageTab('heart')"
-                    class="px-3 sm:px-4 py-1.5 rounded-full transition shadow-xs flex items-center gap-1 bg-white text-rose-700 border border-rose-300">
+                    class="bhai-tab-btn active">
                     <span>🌸</span>
                     <span>Photo Collage</span>
                 </button>
                 <button type="button" id="bhaiTabBtn_swipe" onclick="setBhaiCollageTab('swipe')"
-                    class="px-3 sm:px-4 py-1.5 rounded-full transition shadow-xs flex items-center gap-1 bg-rose-50 text-slate-700 hover:bg-white border border-transparent">
+                    class="bhai-tab-btn">
                     <span>📸</span>
                     <span>Side Slider Stories</span>
                 </button>
                 <button type="button" id="bhaiTabBtn_scrapbook" onclick="setBhaiCollageTab('scrapbook')"
-                    class="px-3 sm:px-4 py-1.5 rounded-full transition shadow-xs flex items-center gap-1 bg-rose-50 text-slate-700 hover:bg-white border border-transparent">
+                    class="bhai-tab-btn">
                     <span>🖼️</span>
                     <span>Scrapbook Wall</span>
                 </button>
@@ -2566,7 +2566,7 @@
                     </div>
 
                     <!-- Side Slider Viewport (Overflow Hidden with Pinned Floating Side Buttons) -->
-                    <div class="relative max-w-lg mx-auto rounded-3xl overflow-hidden bg-rose-50/50 p-1 sm:p-2 border border-rose-200/60 shadow-lg" id="bhaiSliderViewport">
+                    <div class="bhai-slider-viewport-box" id="bhaiSliderViewport">
                         
                         <!-- Track sliding horizontally with hardware-accelerated transform3d -->
                         <div id="bhaiSliderTrack" class="bhai-slider-track">
@@ -2622,7 +2622,7 @@
             </div>
 
             <!-- Modal Footer with Cut Screen Button -->
-            <div class="p-3 bg-white/95 backdrop-blur-md border-t border-rose-200 flex items-center justify-between text-xs font-bold text-slate-600 z-20 px-4 sm:px-6">
+            <div class="p-3.5 bg-white/95 backdrop-blur-md border-t border-rose-200 flex items-center justify-between text-xs font-bold text-slate-600 z-20 px-4 sm:px-6">
                 <span>Forever your loving brother 🤍🧸</span>
                 <div class="flex items-center gap-2">
                     <button type="button" onclick="closeBhaiHeartCollageModal()"

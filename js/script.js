@@ -4028,9 +4028,9 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
                 const view = document.getElementById(`bhaiCollageTab_${t}`);
                 if (btn) {
                     if (t === tabName) {
-                        btn.className = "px-3 sm:px-4 py-1.5 rounded-full transition shadow-xs flex items-center gap-1 bg-white text-rose-700 border border-rose-300 font-black";
+                        btn.className = "bhai-tab-btn active";
                     } else {
-                        btn.className = "px-3 sm:px-4 py-1.5 rounded-full transition shadow-xs flex items-center gap-1 bg-rose-50 text-slate-700 hover:bg-white border border-transparent font-bold";
+                        btn.className = "bhai-tab-btn";
                     }
                 }
                 if (view) {
@@ -4069,31 +4069,37 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
             }
         }
 
-        // 1A. Curated Square Photo Grid (Mobile & Desktop Optimized)
+        // 1A. Curated Square Photo Grid (Mobile & Desktop Optimized Magazine Layout)
         function buildBhaiCuratedGrid() {
             const gridEl = document.getElementById('bhaiCollageGridView');
             if (!gridEl) return;
 
             let html = '';
             BHAI_PHOTO_COLLECTION.forEach((photo, idx) => {
+                const isHero = idx === 0;
                 html += `
-                    <div class="bhai-curated-card group"
+                    <div class="bhai-curated-card group ${isHero ? 'bhai-curated-card-hero' : ''}"
                         onclick="openBhaiSwipeAt(${idx})" title="${photo.title} • Tap to view on Side Slider!">
                         <!-- Ambient blurred backdrop -->
                         <img src="${photo.thumb}" alt="" class="bhai-curated-ambient-bg" />
-                        <!-- Sharp Square Photo with centered face -->
-                        <img src="${photo.thumb}" alt="${photo.title}" class="bhai-curated-photo" style="object-position: ${photo.pos};" loading="lazy" />
+                        <!-- Sharp Photo with centered face -->
+                        <img src="${isHero ? photo.web : photo.thumb}" alt="${photo.title}" class="bhai-curated-photo" style="object-position: ${photo.pos};" loading="${idx < 4 ? 'eager' : 'lazy'}" />
                         <!-- Sleek Pill Sticker Tag Top-Left -->
                         <span class="bhai-curated-sticker">
                             ${photo.sticker}
                         </span>
+                        <!-- Quick View Zoom Hint Top-Right -->
+                        <span class="bhai-curated-zoom-pill" title="Open story">
+                            <span>✨</span>
+                        </span>
                         <!-- Bottom Gradient Title Banner -->
                         <div class="bhai-curated-banner">
+                            <span class="bhai-curated-tag-chip">${photo.tag}</span>
                             <p class="bhai-curated-title">
                                 ${photo.title}
                             </p>
                             <p class="bhai-curated-hint">
-                                Tap to view story ➔
+                                <span>Tap to view story</span> <span class="bhai-curated-arrow">➔</span>
                             </p>
                         </div>
                     </div>
@@ -4128,15 +4134,15 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
             ];
 
             let html = '';
-            heartLayout.forEach((item, cellIdx) => {
+            heartLayout.forEach((item) => {
                 if (item === null) {
                     html += `<div class="aspect-square opacity-0 pointer-events-none"></div>`;
                 } else if (item === 'CENTER') {
                     html += `
                         <div class="bhai-heart-center-badge" onclick="setBhaiCollageTab('swipe')" title="Click to open Side Slider stories!">
-                            <span class="text-base sm:text-2xl animate-bounce">👑</span>
-                            <span class="text-[9px] sm:text-xs font-black text-rose-950 uppercase tracking-wider leading-tight">Kajal Didi 🌸</span>
-                            <span class="text-[8px] sm:text-[10px] font-bold text-rose-700">Open Side Slider ➔</span>
+                            <span class="bhai-heart-crown animate-bounce">👑</span>
+                            <span class="bhai-heart-center-title">Kajal Didi 🌸</span>
+                            <span class="bhai-heart-center-sub">Open Stories ➔</span>
                         </div>
                     `;
                 } else {
@@ -4145,7 +4151,7 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
                         html += `
                             <div class="bhai-heart-tile group" onclick="openBhaiSwipeAt(${item})" title="${photo.title} • Tap to view on side slider!">
                                 <img src="${photo.thumb}" alt="${photo.title}" style="object-position: ${photo.pos};" loading="lazy" />
-                                <span class="absolute inset-0 bg-rose-500/0 group-hover:bg-rose-500/20 transition duration-200"></span>
+                                <span class="bhai-heart-tile-overlay"></span>
                             </div>
                         `;
                     }
@@ -4181,23 +4187,29 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
                             </div>
                             <!-- Story Content Side -->
                             <div class="bhai-slider-info-col">
-                                <div>
-                                    <span class="inline-block px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] sm:text-[11px] font-black tracking-wide uppercase mb-1">
-                                        ${photo.tag}
-                                    </span>
-                                    <h4 class="font-serif-title font-black text-base sm:text-xl text-slate-900 leading-tight">
+                                <div class="bhai-slider-text-header">
+                                    <div class="bhai-slider-badge-row">
+                                        <span class="bhai-slider-tag-pill">
+                                            ${photo.tag}
+                                        </span>
+                                        <span class="bhai-slider-num-pill">
+                                            Memory #${idx + 1} of ${BHAI_PHOTO_COLLECTION.length}
+                                        </span>
+                                    </div>
+                                    <h4 class="bhai-slider-title">
                                         ${photo.title}
                                     </h4>
-                                    <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                                    <p class="bhai-slider-caption">
                                         ${photo.caption}
                                     </p>
                                 </div>
-                                <div class="p-2.5 sm:p-3 rounded-2xl bg-gradient-to-r from-rose-50 via-amber-50 to-pink-50 border border-rose-200/80 shadow-xs">
-                                    <p class="font-handwriting text-rose-800 text-xs sm:text-sm md:text-base font-bold italic leading-snug">
-                                        "${photo.note}"
+                                <div class="bhai-slider-quote-card">
+                                    <span class="bhai-slider-quote-mark">“</span>
+                                    <p class="bhai-slider-note">
+                                        ${photo.note.replace(/^“|”$/g, '')}
                                     </p>
                                 </div>
-                                <div class="flex items-center justify-between text-[11px] sm:text-xs text-rose-600 pt-1 border-t border-rose-100 font-bold">
+                                <div class="bhai-slider-footer-bar">
                                     <span>Story #${idx + 1} of ${BHAI_PHOTO_COLLECTION.length}</span>
                                     <span>Swipe or use ◀ Side Slider ▶</span>
                                 </div>
@@ -4276,10 +4288,12 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
             BHAI_PHOTO_COLLECTION.forEach((photo, idx) => {
                 const isActive = idx === currentBhaiPhotoIndex;
                 html += `
-                    <div onclick="goToBhaiPhoto(${idx})" id="bhaiThumbItem_${idx}"
-                        class="bhai-thumb-item flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden ${isActive ? 'active' : ''}">
-                        <img src="${photo.thumb}" alt="${photo.title}" class="w-full h-full object-cover pointer-events-none" style="object-position: ${photo.pos};" />
-                    </div>
+                    <button type="button" onclick="goToBhaiPhoto(${idx})" id="bhaiThumbItem_${idx}"
+                        class="bhai-thumb-item ${isActive ? 'active' : ''}"
+                        title="View ${photo.title}" aria-label="Go to memory ${idx + 1}">
+                        <img src="${photo.thumb}" alt="${photo.title}" class="bhai-thumb-img" style="object-position: ${photo.pos};" />
+                        <span class="bhai-thumb-badge">${idx + 1}</span>
+                    </button>
                 `;
             });
             stripEl.innerHTML = html;
@@ -4356,29 +4370,29 @@ Enjoy your day to the fullest, eat lots of cake, and never forget that you have 
             const gridEl = document.getElementById('bhaiScrapbookGrid');
             if (!gridEl) return;
 
-            const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2', '-rotate-3', 'rotate-3'];
+            const rotations = ['bhai-rot-neg-2', 'bhai-rot-pos-1', 'bhai-rot-neg-1', 'bhai-rot-pos-2', 'bhai-rot-neg-3', 'bhai-rot-pos-3'];
             let html = '';
 
             BHAI_PHOTO_COLLECTION.forEach((photo, idx) => {
-                const rot = rotations[idx % rotations.length];
+                const rotClass = rotations[idx % rotations.length];
                 html += `
-                    <div class="didi-polaroid ${rot} hover:rotate-0 transition-transform duration-300 cursor-pointer bg-white p-3 rounded-2xl shadow-lg border border-rose-100 space-y-2"
+                    <div class="bhai-scrapbook-card ${rotClass}"
                         onclick="openBhaiSwipeAt(${idx})" title="Tap to view full story on side slider!">
-                        <div class="didi-polaroid-tape"></div>
-                        <div class="relative overflow-hidden rounded-xl aspect-square bg-rose-50 flex items-center justify-center">
+                        <div class="bhai-scrapbook-tape"></div>
+                        <div class="bhai-scrapbook-photo-wrap">
                             <!-- Ambient blur backdrop -->
-                            <img src="${photo.thumb}" alt="" class="absolute inset-0 w-full h-full object-cover blur-sm opacity-35 scale-110 pointer-events-none select-none" />
+                            <img src="${photo.thumb}" alt="" class="bhai-scrapbook-ambient-bg" />
                             <!-- Sharp square photo with centered face -->
-                            <img src="${photo.web}" alt="${photo.title}" class="relative z-10 w-full h-full object-cover select-none pointer-events-none" style="object-position: ${photo.pos};" loading="lazy" />
-                            <span class="absolute top-2 right-2 z-20 px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-black text-rose-700 shadow-xs border border-rose-200">
+                            <img src="${photo.web}" alt="${photo.title}" class="bhai-scrapbook-photo" style="object-position: ${photo.pos};" loading="lazy" />
+                            <span class="bhai-scrapbook-sticker">
                                 ${photo.sticker}
                             </span>
                         </div>
-                        <div class="px-1 text-center">
-                            <p class="font-serif-title font-extrabold text-xs sm:text-sm text-slate-900 truncate">
+                        <div class="bhai-scrapbook-caption-wrap">
+                            <p class="bhai-scrapbook-title">
                                 ${photo.title}
                             </p>
-                            <p class="font-handwriting text-rose-700 text-xs sm:text-sm font-bold mt-0.5">
+                            <p class="bhai-scrapbook-note">
                                 ${photo.note}
                             </p>
                         </div>
